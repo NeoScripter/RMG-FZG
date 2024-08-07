@@ -1,0 +1,34 @@
+/*!**********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles.scss ***!
+  \**********************************************************************************************************/
+body {
+  overflow-x: hidden;
+  overflow-x: clip;
+  min-height: 100vh;
+  background: linear-gradient(117deg, #1d2948 0%, #141d33 38%, #0f1628 50.51%, #050a16 100%);
+  color: #fff;
+  font-family: "Regular"; }
+
+.header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  margin-inline: clamp(48.33333px, 8.05556vw, 161.11111px);
+  margin-top: clamp(22.08333px, 3.68056vw, 73.61111px); }
+  .header ul li {
+    opacity: 0.75;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: clamp(6.25px, 1.04167vw, 20.83333px);
+    transition: opacity 0.3s ease; }
+    .header ul li:is(:hover, :focus-visible, :active) {
+      opacity: 1;
+      font-weight: 500; }
+
+.primary-logo {
+  width: clamp(94.58333px, 15.76389vw, 315.27778px);
+  height: clamp(16.66667px, 2.77778vw, 55.55556px); }
+
+
+/*# sourceMappingURL=style.css.map*/

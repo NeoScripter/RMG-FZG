@@ -19,6 +19,12 @@ function load_js() {
 }
 add_action('wp_enqueue_scripts', 'load_js');
 
+function theme_enqueue_scripts() {
+    wp_enqueue_script('theme-bundle', get_template_directory_uri() . '/dist/bundle.js', array(), '1.0.0', true);
+    wp_enqueue_style('theme-style', get_template_directory_uri() . '/dist/style.css', array(), '1.0.0');
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
+
 function enqueue_custom_scripts() {
     wp_enqueue_script('jquery');
 }
