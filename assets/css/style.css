@@ -1,0 +1,115 @@
+:root {
+    --pr-linear-gr: linear-gradient(117deg, #1d2948 0%, #141d33 38%, #0f1628 50.51%, #050a16 100%);
+    --golden-color: #facc15;
+
+    --px1211: 84.1vw;
+    --px800: 55.56vw;
+    --px700: 48.61vw;
+    --px609: 42.29vw;
+    --px600: 41.67vw;
+    --px522: 36.25vw;
+    --px496: 34.44vw;
+    --px470: 32.64vw;
+    --px427: 29.65vw;
+    --px422: 29.31vw;
+    --px412: 28.61vw;
+    --px400: 27.78vw;
+    --px368: 25.56vw;
+    --px360: 25vw;
+    --px309: 21.46vw;
+    --px296: 20.56vw;
+    --px270: 18.75vw;
+    --px254: 17.64vw;
+    --px245: 17.01vw;
+    --px240: 16.67vw;
+    --px237: 16.46vw;
+    --px236: 16.39vw;
+    --px233: 16.18vw;
+    --px227: 15.76vw;
+    --px220: 15.28vw;
+    --px150: 10.42vw;
+    --px116: 8.06vw;
+    --px82: 5.69vw;
+    --px60: 4.17vw;
+    --px52: 3.61vw;
+    --px46: 3.19vw;
+    --px40: 2.78vw;
+    --px37: 2.57vw;
+    --px30: 2.08vw;
+    --px26: 1.81vw;
+    --px24: 1.67vw;
+    --px17: 1.18vw;
+    --px16: 1.11vw;
+    --px15: 1.04vw;
+    --px13: 0.9vw;
+    --px10: 0.69vw;
+    --px9: 0.62vw;
+    --px8: 0.56vw;
+    --px7: 0.49vw;
+    --px6: 0.42vw;
+    --px5: 0.35vw;
+    --px4: 0.28vw;
+    --px3: 0.21vw;
+    --px2: 0.14vw;
+    --px1: 0.07vw;
+}
+
+/* Reusable Components */
+
+.golden-btn {
+}
+
+.home-section {
+}
+
+.services-section {
+}
+
+.storage-section {
+}
+
+.legal-section {
+}
+
+.accordion-item {
+}
+
+.card-item {
+}
+
+.heading-primary {
+}
+
+.header-li {
+}
+
+.text-base {
+}
+
+.footer-li {
+}
+
+.text-gold {
+    color: var(--golden-color);
+}
+
+.blurred-preview {
+}
+
+.cnt-us-btn {
+}
+
+.blue-ul {
+}
+
+.large-digit-fs {
+    font-size: var(--px52);
+}
+
+.header-fs {
+    font-size: var(--px15);
+}
+
+.footer-fs {
+    font-size: var(--px16);
+}
