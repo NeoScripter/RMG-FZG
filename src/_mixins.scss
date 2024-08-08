@@ -1,0 +1,164 @@
+@mixin max-width($threshold: $small-screen) {
+    @media screen and (max-width: $threshold) {
+        @content;
+    }
+}
+
+@mixin on-hover() {
+    &:is(:hover, :focus-visible, :active) {
+        @content;
+    }
+}
+
+@mixin golden-btn {
+    all: unset;
+    display: block;
+    color: $golden-color;
+    border-color: $golden-color;
+    font-size: resize(15px);
+    border-width: resize(2px);
+    border-style: solid;
+    border-radius: 2em;
+    padding: resize(13px) resize(26px);
+    text-transform: uppercase;
+    width: max-content;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    @include on-hover() {
+        background-color: $golden-color;
+        color: #141d33;
+    }
+
+    @include max-width() {
+        font-size: 9px;
+        padding: 7.5px 15px;
+    }
+}
+
+@mixin home-section($img-width, $img-height, $img-mb-width, $img-mb-height, $gap) {
+    display: flex;
+    align-items: center;
+    gap: $gap;
+
+    div {
+        width: resize(522px);
+        @include max-width() {
+            width: 100%;
+        }
+    }
+
+    h3 {
+        @include main-heading();
+        width: resize(480px);
+        text-align: left;
+        margin-bottom: resize(55px);
+        @include max-width() {
+            width: 100%;
+            margin-bottom: 17px;
+        }
+    }
+
+    p {
+        @include text-base();
+        margin-bottom: resize(30px);
+        @include max-width() {
+            margin-bottom: 17px;
+        }
+    }
+
+    a {
+        @include golden-btn;
+        margin-top: resize(48px);
+        @include max-width() {
+            margin-bottom: 21px;
+        }
+    }
+
+    img {
+        width: resize($img-width);
+        height: resize($img-height);
+        @include max-width() {
+            width: $img-mb-width;
+            height: $img-mb-height;
+        }
+    }
+}
+
+@mixin services-section {
+}
+
+@mixin storage-section {
+}
+
+@mixin legal-section {
+}
+
+@mixin accordion-item {
+}
+
+@mixin card-item {
+}
+
+@mixin heading-primary {
+}
+
+@mixin header-li() {
+    opacity: 0.75;
+    color: #fff;
+    text-transform: capitalize;
+    @include header-fs;
+}
+
+@mixin text-base {
+    font-size: resize(17px);
+    @include max-width() {
+        font-size: 15px;
+    }
+}
+
+@mixin footer-li {
+}
+
+// Font sizes
+
+@mixin large-digit-fs {
+    font-size: var(--px52);
+}
+
+@mixin main-heading-fs {
+    font-size: resize(46px);
+    @include max-width() {
+        font-size: 24px;
+    }
+}
+
+@mixin header-fs {
+    font-size: resize(15px);
+}
+
+@mixin footer-fs {
+    font-size: var(--px16);
+}
+
+@mixin main-heading {
+    @include main-heading-fs;
+    color: #fff;
+    text-align: center;
+    font-family: "Bold";
+    font-style: normal;
+    font-weight: 800;
+    line-height: resize(52px);
+}
+
+@mixin centered {
+    display: grid;
+    place-content: center;
+}
+
+@mixin centering {
+    margin-inline: resize(153px);
+    @include max-width() {
+        margin-inline: 50px;
+    }
+}

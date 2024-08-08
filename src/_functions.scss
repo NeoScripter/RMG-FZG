@@ -1,0 +1,21 @@
+
+@function px-to-vw($current-screen-width, $size) {
+    @return ($size / $current-screen-width) * 100vw;
+}
+
+@function resize-element($initial-screen-width, $initial-size, $target-screen-width) {
+    @return ($initial-size / $initial-screen-width) * $target-screen-width;
+}
+
+@function resize(
+    $initial-size,
+    $initial-screen-width: $screen-width,
+    $small-screen-size: $small-screen,
+    $large-screen-size: $large-screen
+) {
+    @return clamp(
+        resize-element($initial-screen-width, $initial-size, $small-screen-size),
+        px-to-vw($initial-screen-width, $initial-size),
+        resize-element($initial-screen-width, $initial-size, $large-screen-size)
+    );
+}

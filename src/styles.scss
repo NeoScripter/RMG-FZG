@@ -1,70 +1,14 @@
-$screen-width: 1440px;
-$small-screen: 600px;
-$large-screen: 2000px;
-$main-linear-gr: linear-gradient(117deg, #1d2948 0%, #141d33 38%, #0f1628 50.51%, #050a16 100%);
-$golden-color: #facc15;
+@import 'variables';
+@import 'mixins';
+@import 'functions';
 
-@function px-to-vw($current-screen-width, $size) {
-    @return ($size / $current-screen-width) * 100vw;
+.text-golden {
+    color: $golden-color;
 }
 
-@function resize-element($initial-screen-width, $initial-size, $target-screen-width) {
-    @return ($initial-size / $initial-screen-width) * $target-screen-width;
-}
-
-@function calc-clamp(
-    $initial-size,
-    $initial-screen-width: $screen-width,
-    $small-screen-size: $small-screen,
-    $large-screen-size: $large-screen
-) {
-    @return clamp(
-        resize-element($initial-screen-width, $initial-size, $small-screen-size),
-        px-to-vw($initial-screen-width, $initial-size),
-        resize-element($initial-screen-width, $initial-size, $large-screen-size)
-    );
-}
-
-@mixin golden-btn {
-}
-
-@mixin home-section {
-}
-
-@mixin services-section {
-}
-
-@mixin storage-section {
-}
-
-@mixin legal-section {
-}
-
-@mixin accordion-item {
-}
-
-@mixin card-item {
-}
-
-@mixin heading-primary {
-}
-
-@mixin header-li($font-size) {
-    opacity: 0.75;
-    color: #fff;
-    text-transform: capitalize;
-    font-size: $font-size;
-}
-
-@mixin text-base {
-}
-
-@mixin footer-li {
-}
-
-@mixin centered {
-    display: grid;
-    place-content: center;
+html {
+    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 body {
@@ -81,20 +25,130 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 1em;
-    margin-inline: calc-clamp(116px);
-    margin-top: calc-clamp(53px);
+    margin-inline: resize(116px);
+    margin-block: resize(53px);
+    @include max-width() {
+        margin-inline: 25px;
+        margin-block: 28px;
+    }
     li {
-        @include header-li(calc-clamp(15px));
+        @include header-li();
         transition: opacity 0.3s ease;
 
         &:is(:hover, :focus-visible, :active) {
             opacity: 1;
             font-weight: 500;
         }
+        @include max-width() {
+            display: none;
+        }
     }
 }
 
 .primary-logo {
-    width: calc-clamp(227px);
-    height: calc-clamp(40px);
+    width: resize(227px);
+    height: resize(40px);
+    @include max-width() {
+        width: 143px;
+        height: 25px;
+    }
+}
+
+.wrapper {
+    @include centering();
+}
+
+.home-banner {
+    margin-top: resize(114px - 53px);
+    height: resize(844px);
+    background-position: top center;
+    background-size: resize(1000px);
+    background-repeat: no-repeat;
+
+    @include max-width() {
+        height: 483px;
+        background-size: 140vw;
+    }
+
+    &__title {
+        padding-top: resize(100px);
+        margin-bottom: resize(42px);
+        background-size: resize(720px);
+        background-repeat: no-repeat;
+        background-position: center;
+        h1 {
+            @include main-heading;
+            padding-bottom: resize(35px);
+        }
+
+        img {
+            margin-inline: auto;
+            width: resize(69px);
+            height: resize(8px);
+            @include max-width() {
+                width: 31px;
+                height: 4px;
+            }
+        }
+    }
+
+    &__content {
+        width: resize(800px);
+        margin-inline: auto;
+        @include max-width() {
+            width: 100%;
+        }
+
+        p {
+            @include text-base;
+            color: #fff;
+            text-align: center;
+        }
+    }
+
+    &__actions {
+        margin-top: resize(30px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: resize(20px);
+        @include max-width() {
+            gap: 6px;
+        }
+
+        a {
+            @include golden-btn;
+        }
+    }
+}
+
+.home-intro {
+    > h2 {
+        @include main-heading;
+        margin-block: resize(28px) resize(39px);
+    }
+
+    p:has(.text-golden) {
+        width: resize(800px);
+        margin-inline: auto;
+        @include text-base;
+        color: #fff;
+        text-align: center;
+
+        @include max-width() {
+            width: 100%;
+            margin-bottom: 55px;
+        }
+    }
+
+    &__items {
+        margin-top: resize(141px);
+        @include max-width() {
+            margin-top: 55px;
+        }
+    }
+
+    &__item {
+        @include home-section(360px, 360px, 224px, 224px, 158px);
+    }
 }
