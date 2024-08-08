@@ -166,6 +166,10 @@
 }
 
 @mixin footer-li {
+    @include footer-fs();
+    color: #fff;
+    transition: opacity 0.3s ease;
+    font-family: 'Regular';
 }
 
 // Font sizes

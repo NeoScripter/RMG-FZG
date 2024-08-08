@@ -16,32 +16,39 @@ body {
   color: #fff;
   font-family: "Regular"; }
 
-.header ul {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1em;
-  margin-inline: clamp(48.33333px, 8.05556vw, 161.11111px);
-  margin-block: clamp(22.08333px, 3.68056vw, 73.61111px); }
+  gap: clamp(25px, 4.16667vw, 83.33333px);
+  padding-inline: clamp(48.33333px, 8.05556vw, 161.11111px);
+  padding-block: clamp(22.08333px, 3.68056vw, 73.61111px); }
   @media screen and (max-width: 600px) {
-    .header ul {
-      margin-inline: 25px;
-      margin-block: 28px; } }
-  .header ul li {
+    .header {
+      padding-inline: 25px;
+      padding-block: 28px; } }
+  .header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(25px, 4.16667vw, 83.33333px); }
+    @media screen and (max-width: 600px) {
+      .header ul {
+        padding-inline: 25px;
+        padding-block: 28px;
+        display: none; } }
+  .header li {
     opacity: 0.75;
     color: #fff;
     text-transform: capitalize;
     font-size: clamp(6.25px, 1.04167vw, 20.83333px);
     transition: opacity 0.3s ease; }
     @media screen and (max-width: 600px) {
-      .header ul li {
+      .header li {
         font-size: 16px; } }
-    .header ul li:is(:hover, :focus-visible, :active) {
+    .header li:is(:hover, :focus-visible, :active) {
       opacity: 1;
       font-weight: 500; }
-    @media screen and (max-width: 600px) {
-      .header ul li {
-        display: none; } }
 
 .primary-logo {
   width: clamp(94.58333px, 15.76389vw, 315.27778px);
@@ -526,6 +533,7 @@ body {
     border-radius: 3em;
     margin-inline: auto;
     font-weight: 600;
+    font-family: "Medium";
     font-size: clamp(6.66667px, 1.11111vw, 22.22222px);
     width: max-content;
     display: block;
@@ -536,6 +544,77 @@ body {
       .call-to-action__link {
         font-size: 10px;
         padding: 9px 17px; } }
+
+.footer {
+  padding-inline: clamp(56.25px, 9.375vw, 187.5px);
+  padding-bottom: clamp(36.25px, 6.04167vw, 120.83333px);
+  display: flex;
+  justify-content: space-between; }
+  @media screen and (max-width: 600px) {
+    .footer {
+      padding-inline: 50px;
+      padding-bottom: 60px;
+      flex-direction: column;
+      margin-top: 120px; } }
+  .footer-logo {
+    width: clamp(94.58333px, 15.76389vw, 315.27778px);
+    height: clamp(16.66667px, 2.77778vw, 55.55556px);
+    margin-bottom: clamp(17.91667px, 2.98611vw, 59.72222px); }
+    @media screen and (max-width: 600px) {
+      .footer-logo {
+        width: 227px;
+        height: 40px;
+        margin-bottom: 38px; } }
+  @media screen and (max-width: 600px) {
+    .footer-info {
+      margin-bottom: 40px; } }
+  .footer-info__description {
+    font-size: clamp(6.66667px, 1.11111vw, 22.22222px);
+    color: #fff;
+    width: clamp(106.66667px, 17.77778vw, 355.55556px);
+    user-select: none; }
+    @media screen and (max-width: 600px) {
+      .footer-info__description {
+        font-size: 16px; } }
+    @media screen and (max-width: 600px) {
+      .footer-info__description {
+        width: 100%; } }
+    .footer-info__description:last-of-type {
+      margin-top: clamp(26.25px, 4.375vw, 87.5px);
+      text-transform: uppercase; }
+      @media screen and (max-width: 600px) {
+        .footer-info__description:last-of-type {
+          display: none; } }
+  .footer-nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: clamp(156.66667px, 26.11111vw, 522.22222px);
+    gap: clamp(12.5px, 2.08333vw, 41.66667px); }
+    @media screen and (max-width: 600px) {
+      .footer-nav ul {
+        gap: 30px;
+        width: 100%;
+        grid-template-columns: 1fr; } }
+    .footer-nav ul li {
+      font-size: clamp(6.66667px, 1.11111vw, 22.22222px);
+      color: #fff;
+      transition: opacity 0.3s ease;
+      font-family: 'Regular'; }
+      @media screen and (max-width: 600px) {
+        .footer-nav ul li {
+          font-size: 16px; } }
+      .footer-nav ul li:is(:hover, :focus-visible, :active) {
+        opacity: 0.75; }
+  @media screen and (max-width: 600px) {
+    .footer-nav {
+      margin-bottom: 72px; } }
+  .footer-copyright {
+    font-size: clamp(6.66667px, 1.11111vw, 22.22222px);
+    color: #fff;
+    user-select: none; }
+    @media screen and (max-width: 600px) {
+      .footer-copyright {
+        font-size: 16px; } }
 
 
 /*# sourceMappingURL=style.css.map*/
