@@ -1,6 +1,6 @@
-@import 'variables';
-@import 'mixins';
-@import 'functions';
+@import "variables";
+@import "mixins";
+@import "functions";
 
 .text-golden {
     color: $golden-color;
@@ -56,18 +56,19 @@ body {
 
 .wrapper {
     @include centering();
+    overflow: visible;
 }
 
 .home-banner {
     margin-top: resize(114px - 53px);
-    height: resize(844px);
+    min-height: resize(844px);
     background-position: top center;
     background-size: resize(1000px);
     background-repeat: no-repeat;
 
     @include max-width() {
-        height: 483px;
-        background-size: 140vw;
+        min-height: 483px;
+        background-size: 100vw;
     }
 
     &__title {
@@ -76,6 +77,10 @@ body {
         background-size: resize(720px);
         background-repeat: no-repeat;
         background-position: center;
+        
+        @include max-width() {
+            background-size: 80vw;
+        };
         h1 {
             @include main-heading;
             padding-bottom: resize(35px);
@@ -97,6 +102,7 @@ body {
         margin-inline: auto;
         @include max-width() {
             width: 100%;
+            padding-inline: 40px;
         }
 
         p {
@@ -113,7 +119,8 @@ body {
         justify-content: center;
         gap: resize(20px);
         @include max-width() {
-            gap: 6px;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         a {
@@ -123,6 +130,9 @@ body {
 }
 
 .home-intro {
+    @include max-width() {
+        margin-inline: px-to-vw(600px, 50px);
+    }
     > h2 {
         @include main-heading;
         margin-block: resize(28px) resize(39px);
@@ -138,17 +148,133 @@ body {
         @include max-width() {
             width: 100%;
             margin-bottom: 55px;
+            text-align: left;
         }
     }
 
     &__items {
         margin-top: resize(141px);
+        margin-bottom: resize(112px);
+        display: grid;
+        gap: resize(45px);
         @include max-width() {
             margin-top: 55px;
+            margin-bottom: 47px;
+            gap: 80px;
         }
     }
 
+    $sections: (
+        (360px, 360px, 224px, 224px, 158px, 15px, false), 
+        (600px, 400px, 351px, 234px, 71px, 44px, true), 
+        (240px, 240px, 167px, 167px, 187px, 31px, false)
+        );
     &__item {
-        @include home-section(360px, 360px, 224px, 224px, 158px);
+        @for $i from 1 through length($sections) {
+            &:nth-of-type(#{$i}) {
+                @include home-section(
+                    nth(nth($sections, $i), 1),
+                    nth(nth($sections, $i), 2),
+                    nth(nth($sections, $i), 3),
+                    nth(nth($sections, $i), 4),
+                    nth(nth($sections, $i), 5),
+                    nth(nth($sections, $i), 6),
+                    nth(nth($sections, $i), 7)
+                );
+            }
+        }
+    }
+
+    &__advs {
+        @include blue-section(110px);
+    }
+}
+
+.call-to-action {
+    min-height: resize(1089px);
+    padding-top: resize(487px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include max-width() {
+        min-height: 520px;
+        padding-top: 159px;
+    }
+
+    &__content {
+        isolation: isolate;
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        border-radius: resize(69px);
+        padding-top: resize(58px);
+        padding-bottom: resize(114px);
+        position: relative;
+        z-index: 2;
+        background: radial-gradient(circle, rgba(132, 255, 255, 0.7) 0%, rgba(0, 0, 0, 1) 50%);
+
+        @include max-width() {
+            border-radius: 17px;
+            padding-top: 58px;
+            padding-bottom: 78px;
+        }
+
+        &:before {
+            content: '';
+            z-index: -2;
+            position: absolute;
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            border-radius: inherit;
+            inset: 0;
+        }
+    }
+
+    &__image {
+        margin-inline: auto;
+        width: resize(82px);
+        height: resize(82px);
+        margin-bottom: resize(14px);
+
+        @include max-width() {
+            width: 82px;
+            height: 82px;
+            margin-bottom: 28px;
+        }
+    }
+
+    &__heading {
+        @include main-heading();
+        margin-bottom: resize(25px);
+
+        @include max-width() {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__link {
+        background-color: $golden-color;
+        color: $black-color;
+        text-transform: uppercase;
+        padding: resize(13px) resize(26px);
+        border-radius: 3em;
+        margin-inline: auto;
+        font-weight: 600;
+        font-size: resize(16px);
+        width: max-content;
+        display: block;
+        transition: background-color 0.3s ease;
+
+        @include on-hover() {
+            background-color: darken($golden-color, 10%);
+        }
+
+        @include max-width() {
+            font-size: 10px;
+            padding: 9px 17px;
+        }
+
     }
 }
