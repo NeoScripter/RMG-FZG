@@ -64,8 +64,8 @@ body {
     cursor: pointer;
     @include max-width() {
         display: block;
-        width: 17px;
-        height: 10px;
+        width: 24px;
+        height: 15px;
     }
 }
 
@@ -80,7 +80,7 @@ body {
 
 .popup {
     position: fixed;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -94,6 +94,9 @@ body {
     max-width: 300px;
     border-radius: 0.6em;
 
+    @include max-width() {
+        display: flex;
+    }
     .footer-nav {
         margin-bottom: 0;
     }

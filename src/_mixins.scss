@@ -133,7 +133,64 @@
 
 }
 
-@mixin services-section {
+@mixin services-section($img-width, $img-height, $img-mb-width, $img-mb-height, $gap, $gap-mb) {
+    display: flex;
+    gap: resize($gap);
+
+    @include max-width() {
+        gap: $gap-mb;
+        flex-direction: column;
+        .services-item__content {
+            order: 2;
+        }
+    }
+
+    .services-item__heading {
+        @include main-heading();
+        margin-bottom: resize(60px);
+        text-align: left;
+        @include max-width() {
+            text-align: center;
+            margin-bottom: 40px;
+
+        }
+    }
+
+    .services-item__advs {
+        @include blue-section(28px);
+        margin-bottom: resize(36px);
+        @include max-width() {
+            margin-bottom: 36px;
+         }
+    }
+
+    .services-item__description {
+        @include text-base;
+        color: #fff;
+        width: resize(594px);
+        margin-bottom: resize(30px);
+        @include max-width() {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 36px;
+        }
+    }
+
+    .services-item__link {
+        @include golden-btn();
+
+    }
+
+    .services-item__img {
+        flex-grow: 1;
+        width: resize($img-width);
+        height: resize($img-height);
+        @include max-width() {
+            width: $img-mb-width;
+            height: $img-mb-height;
+            margin-inline: auto;
+        }
+    }
 }
 
 @mixin storage-section {

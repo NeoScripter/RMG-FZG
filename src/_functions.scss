@@ -1,10 +1,14 @@
 
 @function px-to-vw($current-screen-width, $size) {
-    @return ($size / $current-screen-width) * 100vw;
-}
+    $result: ($size / $current-screen-width) * 100;
+    $rounded: ceil($result * 100) / 100;
+    @return $rounded * 1vw;
+  }
 
 @function resize-element($initial-screen-width, $initial-size, $target-screen-width) {
-    @return ($initial-size / $initial-screen-width) * $target-screen-width;
+    $result: ($initial-size / $initial-screen-width) * $target-screen-width;
+    $rounded: ceil($result * 100) / 100;
+    @return $rounded;
 }
 
 @function resize(

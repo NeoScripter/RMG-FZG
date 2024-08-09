@@ -23,3 +23,13 @@
         ?>
         <img src="<?php echo get_template_directory_uri() . "/assets/svgs/burger.svg"; ?>" alt="FMG FZC logo" class="burger-menu" id="openPopup">
     </header>
+    <div class="popup">
+        <img src="<?php echo get_template_directory_uri() . "/assets/imgs/logo-dark-large.png"; ?>" alt="FMG FZC logo" class="primary-logo">
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'footer-menu',
+            'menu_class' => 'footer-nav'
+        ));
+        ?>
+        <p class="footer-copyright">© RMG FZC LIMITED</p>
+    </div>
