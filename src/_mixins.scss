@@ -4,6 +4,12 @@
     }
 }
 
+@mixin min-width($threshold: $small-screen) {
+    @media screen and (min-width: $threshold) {
+        @content;
+    }
+}
+
 @mixin on-hover() {
     &:is(:hover, :focus-visible, :active) {
         @content;
