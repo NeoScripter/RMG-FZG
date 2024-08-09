@@ -31,3 +31,40 @@
         }
     }
 }
+
+.storage-main__items {
+    margin-top: resize(141px);
+    margin-bottom: resize(152px);
+    display: grid;
+    gap: resize(100px);
+    @include max-width() {
+        margin-top: 55px;
+        margin-bottom: 47px;
+        gap: 40px;
+        margin-inline: px-to-vw(600px, 30px);
+    }
+
+    $sections: (
+        (296px, 296px, 224px, 224px, 200px, 20px, false, false), 
+        (270px, 270px, 224px, 224px, 210px, 44px, true, true),
+        (233px, 233px, 200px, 200px, 220px, 44px, false, true), 
+        (236px, 236px, 200px, 200px, 200px, 54px, true, true),
+        (245px, 245px, 224px, 200px, 200px, 44px, false, true)
+    );
+    .storage-main__item {
+        @for $i from 1 through length($sections) {
+            &:nth-of-type(#{$i}) {
+                @include storage-main(
+                    nth(nth($sections, $i), 1),
+                    nth(nth($sections, $i), 2),
+                    nth(nth($sections, $i), 3),
+                    nth(nth($sections, $i), 4),
+                    nth(nth($sections, $i), 5),
+                    nth(nth($sections, $i), 6),
+                    nth(nth($sections, $i), 7),
+                    nth(nth($sections, $i), 8)
+                );
+            }
+        }
+    }
+}

@@ -193,7 +193,101 @@
     }
 }
 
-@mixin storage-section {
+@mixin storage-main($img-width, $img-height, $img-mb-width, $img-mb-height, $gap, $gap-mb, $flag, $centered) {
+    display: flex;
+    gap: resize($gap);
+
+    @if $flag == true {
+        justify-content: flex-end;
+    }
+
+    @if $centered == true {
+        align-items: center;
+    }
+
+    @include max-width() {
+        gap: $gap-mb;
+        flex-direction: column;
+        .storage-main__item-content {
+            order: -1;
+        }
+    }
+
+    .storage-main__item-content {
+        width: resize(522px);
+        @include max-width() {
+            width: 100%;
+            margin-inline: auto;
+        }
+    }
+
+    .storage-main__item-heading {
+        @include main-heading();
+        width: resize(480px);
+        text-align: left;
+        margin-bottom: resize(40px);
+        @include max-width() {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+
+    .storage-main__item-description {
+        @include text-base();
+        margin-bottom: resize(50px);
+        @include max-width() {
+            margin-bottom: 30px;
+        }
+    }
+
+    .storage-main__item__flex-group {
+        @include storage-flex();
+    }
+
+    .storage-main__item-image {
+        width: resize($img-width);
+        height: resize($img-height);
+        @include max-width() {
+            width: $img-mb-width;
+            height: $img-mb-height;
+            margin-inline: auto;
+        }
+    }
+}
+
+@mixin storage-flex {
+    user-select: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: resize(18px);
+    width: resize(600px);
+
+    @include max-width() {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    &-item {
+        text-align: center;
+        padding-inline: resize(15px);
+        padding-block: resize(7px);
+        border-radius: resize(12px);
+        border: resize(1px) solid rgba(255, 255, 255, 0.4);
+        font-size: resize(16px);
+        color: #fff;
+        text-transform: capitalize;
+        width: max-content;
+
+        @include max-width() {
+            font-size: 14px;
+            padding-inline: 10px;
+            padding-block: 5px;
+            border-radius: 12px;
+            border-width: 1px;
+        }
+    }
 }
 
 @mixin storage-intro($img-width, $img-height, $img-mb-width, $img-mb-height, $gap, $gap-mb, $flag) {
