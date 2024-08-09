@@ -531,11 +531,43 @@
     }
 }
 
+@mixin stages-main($item-width, $title-width, $description-width, $color) {
+    width: resize($item-width);
+    height: resize(244px);
+    background: radial-gradient(circle, $color 0%, rgba(31, 41, 55, 0.40) 60%);
+    backdrop-filter: blur(10px);
+    padding: resize(20px) resize(28px);
+    @include transparent-border();
 
-@mixin accordion-item {
+    @include max-width() {
+        width: 100%;
+        height: auto;
+    }
+
+    .stages-main__item-header {
+        display: flex;
+        align-items: center;
+        gap: resize(13px);
+        margin-bottom: resize(16px);
+    }
+
+    .stages-main__item-digit {
+        @include large-digit-fs();
+        text-transform: uppercase;
+        font-family: 'Bold';
+    }
+
+    .stages-main__item-title {
+        @include large-prg();
+        width: resize($title-width);
+    }
+    .stages-main__item-description {
+        color: $prg-color;
+        width: resize($description-width);
+    }
 }
 
-@mixin card-item {
+@mixin accordion-item {
 }
 
 @mixin header-li() {
@@ -562,7 +594,10 @@
 // Font sizes
 
 @mixin large-digit-fs {
-    font-size: var(--px52);
+    font-size: resize(52px);
+    @include max-width() {
+        font-size: 30px;
+    }
 }
 
 @mixin main-heading-fs {
@@ -609,6 +644,19 @@
     @include max-width() {
         line-height: 30px;
         font-size: 20px;
+    }
+}
+
+@mixin large-prg {
+    color: #fff;
+    font-family: "Medium";
+    font-style: normal;
+    font-weight: 700;
+    line-height: resize(24px);
+    font-size: resize(24px);
+    @include max-width() {
+        line-height: 18px;
+        font-size: 18px;
     }
 }
 
