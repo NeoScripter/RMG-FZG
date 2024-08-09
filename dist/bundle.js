@@ -14,10 +14,34 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/legal.scss":
+/*!************************!*\
+  !*** ./src/legal.scss ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./src/services.scss":
 /*!***************************!*\
   !*** ./src/services.scss ***!
   \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/stages.scss":
+/*!*************************!*\
+  !*** ./src/stages.scss ***!
+  \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -85,6 +109,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.scss */ "./src/home.scss");
 /* harmony import */ var _services_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services.scss */ "./src/services.scss");
 /* harmony import */ var _storage_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./storage.scss */ "./src/storage.scss");
+/* harmony import */ var _legal_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./legal.scss */ "./src/legal.scss");
+/* harmony import */ var _stages_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./stages.scss */ "./src/stages.scss");
+
+
 
 
 

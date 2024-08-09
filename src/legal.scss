@@ -1,0 +1,57 @@
+@import "variables";
+@import "mixins";
+@import "functions";
+
+.legal-intro__items {
+    margin-top: resize(141px);
+    margin-bottom: resize(131px);
+    display: grid;
+    gap: resize(45px);
+    @include max-width() {
+        margin-top: 55px;
+        margin-bottom: 47px;
+        gap: 20px;
+        margin-inline: px-to-vw(600px, 50px);
+    }
+
+    $sections: ((412px, 412px, 224px, 224px, 200px, 25px, false), (568px, 568px, 320px, 220px, 130px, 24px, true));
+    .legal-intro__item {
+        @for $i from 1 through length($sections) {
+            &:nth-of-type(#{$i}) {
+                @include legal-intro(
+                    nth(nth($sections, $i), 1),
+                    nth(nth($sections, $i), 2),
+                    nth(nth($sections, $i), 3),
+                    nth(nth($sections, $i), 4),
+                    nth(nth($sections, $i), 5),
+                    nth(nth($sections, $i), 6),
+                    nth(nth($sections, $i), 7)
+                );
+            }
+        }
+    }
+}
+
+.legal-banner {
+    margin-block: resize(100px) resize(118px);
+    text-align: center;
+
+    @include max-width() {
+        margin-block: 40px 40px;
+    }
+
+    &__heading {
+        @include main-heading();
+        margin-bottom: resize(39px);
+        @include max-width() {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__description {
+        @include text-base;
+        color: #fff;
+        max-width: resize(1000px);
+        margin-inline: auto;
+    }
+}

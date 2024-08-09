@@ -1,0 +1,40 @@
+@import "variables";
+@import "mixins";
+@import "functions";
+
+.stages-banner {
+    margin-block: resize(100px) resize(118px);
+    text-align: center;
+
+    @include max-width() {
+        margin-block: 40px 40px;
+    }
+
+    &__heading {
+        @include main-heading();
+        width: resize(703px);
+        margin-inline: auto;
+        margin-bottom: resize(39px);
+        @include max-width() {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__description {
+        @include text-base;
+        color: #fff;
+        max-width: resize(1000px);
+        margin-inline: auto;
+    }
+
+    &__link {
+        @include golden-btn;
+        margin-top: resize(48px);
+        margin-inline: auto;
+        @include max-width() {
+            margin-bottom: 21px;
+            margin-top: 41px;
+        }
+    }
+}
