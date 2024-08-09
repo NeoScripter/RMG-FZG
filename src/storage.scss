@@ -1,0 +1,33 @@
+@import "variables";
+@import "mixins";
+@import "functions";
+
+.storage-intro__items {
+    margin-top: resize(141px);
+    margin-bottom: resize(252px);
+    display: grid;
+    gap: resize(45px);
+    @include max-width() {
+        margin-top: 55px;
+        margin-bottom: 47px;
+        gap: 40px;
+        margin-inline: px-to-vw(600px, 50px);
+    }
+
+    $sections: ((360px, 360px, 224px, 224px, 158px, 15px, false), (237px, 237px, 224px, 224px, 240px, 44px, true));
+    .storage-intro__item {
+        @for $i from 1 through length($sections) {
+            &:nth-of-type(#{$i}) {
+                @include storage-intro(
+                    nth(nth($sections, $i), 1),
+                    nth(nth($sections, $i), 2),
+                    nth(nth($sections, $i), 3),
+                    nth(nth($sections, $i), 4),
+                    nth(nth($sections, $i), 5),
+                    nth(nth($sections, $i), 6),
+                    nth(nth($sections, $i), 7)
+                );
+            }
+        }
+    }
+}

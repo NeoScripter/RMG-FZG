@@ -24,6 +24,18 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
+/***/ }),
+
+/***/ "./src/storage.scss":
+/*!**************************!*\
+  !*** ./src/storage.scss ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
 /***/ })
 
 /******/ 	});
@@ -72,6 +84,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.scss */ "./src/home.scss");
 /* harmony import */ var _services_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services.scss */ "./src/services.scss");
+/* harmony import */ var _storage_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./storage.scss */ "./src/storage.scss");
+
 
 
 /******/ })()

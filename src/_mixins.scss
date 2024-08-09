@@ -196,6 +196,70 @@
 @mixin storage-section {
 }
 
+@mixin storage-intro($img-width, $img-height, $img-mb-width, $img-mb-height, $gap, $gap-mb, $flag) {
+    display: flex;
+    gap: resize($gap);
+
+    @if $flag == true {
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    @include max-width() {
+        gap: $gap-mb;
+        flex-direction: column;
+        @if $flag == true {
+            .storage-intro__item-content {
+                order: -1;
+            }
+        }
+    }
+
+    .storage-intro__item-content {
+        width: resize(522px);
+        @include max-width() {
+            width: 100%;
+        }
+    }
+
+    .storage-intro__item-heading {
+        @include main-heading();
+        width: resize(480px);
+        text-align: left;
+        margin-bottom: resize(40px);
+        @include max-width() {
+            width: 100%;
+            margin-bottom: 17px;
+        }
+    }
+
+    .storage-intro__item-description {
+        @include text-base();
+        margin-bottom: resize(30px);
+        @include max-width() {
+            margin-bottom: 17px;
+        }
+    }
+
+    .storage-intro__item-link {
+        @include golden-btn;
+        margin-top: resize(48px);
+        @include max-width() {
+            margin-bottom: 21px;
+        }
+    }
+
+    .storage-intro__item-image {
+        width: resize($img-width);
+        height: resize($img-height);
+        @include max-width() {
+            width: $img-mb-width;
+            height: $img-mb-height;
+            margin-inline: auto;
+        }
+    }
+}
+
 @mixin legal-section {
 }
 
