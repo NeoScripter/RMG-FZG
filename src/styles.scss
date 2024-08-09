@@ -32,6 +32,12 @@ body {
         padding-block: 28px;
     }
 
+    div {
+        @include max-width() {
+            display: none;
+        }
+    }
+
     ul {
         display: flex;
         justify-content: space-between;
@@ -40,7 +46,6 @@ body {
         @include max-width() {
             padding-inline: 25px;
             padding-block: 28px;
-            display: none;
         }
     }
     li {
@@ -54,12 +59,47 @@ body {
     }
 }
 
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    @include max-width() {
+        display: block;
+        width: 17px;
+        height: 10px;
+    }
+}
+
 .primary-logo {
     width: resize(227px);
     height: resize(40px);
     @include max-width() {
         width: 143px;
         height: 25px;
+    }
+}
+
+.popup {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2em 1em;
+    gap: 80px;
+    top: 0;
+    translate: -100%;
+    background: $main-linear-gr;
+    transition: translate 0.5s ease-in-out;
+    width: calc(100vw - 100px);
+    max-width: 300px;
+    border-radius: 0.6em;
+
+    .footer-nav {
+        margin-bottom: 0;
+    }
+
+    &.open {
+        translate: 0%;
     }
 }
 
@@ -364,8 +404,12 @@ body {
     }
 
     &-copyright {
+        display: none;
         @include footer-fs();
         color: #fff;
         user-select: none;
+        @include max-width() {
+            display: inline;
+        }
     }
 }

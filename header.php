@@ -21,4 +21,5 @@
             'theme_location' => 'header-menu-right',
         ));
         ?>
+        <img src="<?php echo get_template_directory_uri() . "/assets/svgs/burger.svg"; ?>" alt="FMG FZC logo" class="burger-menu" id="openPopup">
     </header>

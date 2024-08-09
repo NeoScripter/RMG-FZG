@@ -1,4 +1,14 @@
 <?php get_header(); ?>
+<div class="popup">
+    <img src="<?php echo get_template_directory_uri() . "/assets/imgs/logo-dark-large.png"; ?>" alt="FMG FZC logo" class="primary-logo">
+    <?php
+    wp_nav_menu(array(
+        'theme_location' => 'footer-menu',
+        'menu_class' => 'footer-nav'
+    ));
+    ?>
+    <p class="footer-copyright">© RMG FZC LIMITED</p>
+</div>
 <div class="wrapper">
     <section class="home-banner">
         <div class="home-banner__title">
