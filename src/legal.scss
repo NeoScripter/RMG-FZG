@@ -14,7 +14,10 @@
         margin-inline: px-to-vw(600px, 50px);
     }
 
-    $sections: ((412px, 412px, 224px, 224px, 200px, 25px, false), (568px, 568px, 320px, 220px, 130px, 24px, true));
+    $sections: (
+        (412px, 412px, 224px, 224px, 200px, 25px, false),
+        (568px, 568px, 320px, 220px, 130px, 24px, true)
+    );
     .legal-intro__item {
         @for $i from 1 through length($sections) {
             &:nth-of-type(#{$i}) {
@@ -32,26 +35,85 @@
     }
 }
 
-.legal-banner {
-    margin-block: resize(100px) resize(118px);
-    text-align: center;
-
+.legal-main {
+    margin-bottom: resize(100px);
     @include max-width() {
-        margin-block: 40px 40px;
+        margin-bottom: 80px;
     }
+}
 
-    &__heading {
-        @include main-heading();
-        margin-bottom: resize(39px);
-        @include max-width() {
-            margin-bottom: 30px;
+$sections: (
+    (398px, 398px, 224px, 224px, 200px, 25px, false, rgba(163, 11, 163, 0.4)),
+    (422px, 422px, 224px, 224px, 180px, 25px, false, rgba(201, 129, 20, 0.4)),
+    (386px, 386px, 224px, 224px, 180px, 25px, false, rgba(39, 96, 219, 0.4))
+);
+.legal-main__item {
+    @for $i from 1 through length($sections) {
+        &:nth-of-type(#{$i}) {
+            @include legal-section(
+                nth(nth($sections, $i), 1),
+                nth(nth($sections, $i), 2),
+                nth(nth($sections, $i), 3),
+                nth(nth($sections, $i), 4),
+                nth(nth($sections, $i), 5),
+                nth(nth($sections, $i), 6),
+                nth(nth($sections, $i), 7),
+                nth(nth($sections, $i), 8)
+            );
         }
     }
+}
 
-    &__description {
-        @include text-base;
-        color: #fff;
-        max-width: resize(1000px);
-        margin-inline: auto;
+
+.legal-docs {
+    display: grid;
+    gap: resize(100px);
+    margin-bottom: resize(250px);
+
+    @include max-width() {
+        gap: 50px;
+        margin-bottom: 60px;
+        margin-inline: px-to-vw(600px, 30px);
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: resize(167px);
+
+        @include max-width() {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        &-content {
+            flex-shrink: 0;
+            width: resize(740px);
+            @include max-width() {
+                width: 100%;
+            }
+        }
+
+        &-heading {
+            @include seconday-heading();
+            margin-bottom: resize(36px);
+            @include max-width() {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+        }
+
+        &-description {
+            @include text-base;
+            color: #fff;
+            margin-inline: auto;
+            @include max-width() {
+                text-align: center;
+            }
+        }
+
+        &-link {
+            @include golden-btn();
+        }
     }
 }
