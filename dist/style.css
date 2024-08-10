@@ -2825,14 +2825,15 @@ section {
         font-weight: 700;
         display: block;
         text-transform: capitalize;
-        padding-right: 100px; }
+        padding-right: clamp(37.5px, 6.25vw, 125px); }
         @media screen and (max-width: 600px) {
           .stages-faq__item-title h4 {
             line-height: 26px;
             font-size: 20px; } }
         @media screen and (max-width: 600px) {
           .stages-faq__item-title h4 {
-            font-size: 17px; } }
+            font-size: 17px;
+            padding-right: 60px; } }
       .stages-faq__item-title .digit {
         line-height: clamp(10px, 1.67vw, 33.34px);
         font-size: clamp(10px, 1.67vw, 33.34px);
@@ -2848,7 +2849,7 @@ section {
       .stages-faq__item-title .stages-faq__item-svg {
         position: absolute;
         cursor: pointer;
-        aspect-ratio: 1/1;
+        width: clamp(35.84px, 5.98vw, 119.45px);
         right: 0;
         top: 0;
         bottom: 0;
@@ -2856,6 +2857,10 @@ section {
         display: flex;
         align-items: center;
         justify-content: center; }
+        @media screen and (max-width: 600px) {
+          .stages-faq__item-title .stages-faq__item-svg {
+            background-color: transparent;
+            width: 80px; } }
         .stages-faq__item-title .stages-faq__item-svg svg {
           width: clamp(8.34px, 1.39vw, 27.78px);
           height: clamp(9.17px, 1.53vw, 30.56px); }
