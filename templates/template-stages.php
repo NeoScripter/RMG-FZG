@@ -49,6 +49,24 @@
                 </div>
                 <p class="stages-main__item-description">Sign up on our website to create your RMG FZC account. Provide the necessary identification documents for verification.</p>
             </div>
+            <img src="<?php echo get_template_directory_uri() . "/assets/imgs/howitworks-1.png" ;?>" alt="Rectangular golden bullion" class="stages-main__items-img">
+        </div>
+    </section>
+    <section class="stages-faq">
+        <h2 class="stages-faq__heading">Frequently asked questions</h2>
+        <div class="stages-faq__items">
+            <div class="stages-faq__item">
+                <div class="stages-faq__item-title">
+                    <div class="digit">01</div>
+                    <h4>Sell or Withdraw Your Gold</h4>
+                    <div class="stages-faq__item-svg toggle-faq">
+                        <?php include get_template_directory() . "/assets/svgs/accordion-close.svg" ;?>
+                    </div>
+                </div>
+                <div class="stages-faq__item-content">
+                    RMG FZC is a wholesale gold bullion enterprise dealer based in Hong Kong SAR, China. We provide services for buying, selling, and storing gold bullion.
+                </div>
+            </div>
         </div>
     </section>
 </div>

@@ -1,0 +1,6 @@
+<svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="Component 2">
+    <path id="Horizontal-Line" d="M0 11H21C21.55 11 22 10.55 22 10C22 9.45 21.55 9 21 9H0C-0.55 9 0 9.45 0 10C0 10.55 0 11 0 11Z" fill="white"/>
+    <path id="Vertical-Line" d="M10 0V21C10 21.55 10.45 22 11 22C11.55 22 12 21.55 12 21V0C12 0.45 11.55 0 11 0C10.45 0 10 0.45 10 1Z" fill="white"/>
+  </g>
+</svg>

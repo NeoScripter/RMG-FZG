@@ -48,7 +48,7 @@
         @include main-heading();
         margin-bottom: resize(56px);
         @include max-width() {
-            margin-bottom: 21px;
+            margin-bottom: 30px;
         }
     }
 
@@ -57,6 +57,20 @@
         display: flex;
         flex-wrap: wrap;
         gap: resize(25px);
+
+        &-img {
+            position: absolute;
+            right: resize(-124px);
+            bottom: resize(-230px);
+            width: resize(427px);
+            height: resize(427px);
+            @include max-width() {
+                position: static;
+                margin-inline: auto;
+                height: auto;
+                width: 80vw;
+            }
+        }
 
         $sections: (
             (402px, 174px, 281px, rgba(20, 151, 147, 0.4)),
@@ -75,6 +89,114 @@
                         nth(nth($sections, $i), 4)
                     );
                 }
+            }
+        }
+    }
+}
+
+.stages-faq {
+    margin-bottom: resize(210px);
+    @include max-width() {
+        margin-bottom: 50px;
+    }
+    &__heading {
+        @include main-heading();
+        margin-bottom: resize(131px);
+        @include max-width() {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__items {
+        display: grid;
+        gap: resize(33px);
+        @include max-width() {
+            gap: 20px;
+        }
+    }
+
+    &__item {
+        @include transparent-border();
+        padding-left: resize(40px);
+        margin-inline: auto;
+        width: resize(963px);
+        overflow: hidden;
+        @include max-width() {
+            padding-left: 20px;
+            width: 100%;
+        }
+
+        &-title {
+            padding-block: resize(28px);
+            display: flex;
+            position: relative;
+            align-items: center;
+            gap: resize(34px);
+            @include max-width() {
+                padding-block: 20px;
+                gap: 20px;
+            }
+
+            h4 {
+                @include large-prg();
+                display: block;
+                text-transform: capitalize;
+                padding-right: 100px;
+                @include max-width() {
+                    font-size: 17px;
+                }
+            }
+
+            .digit {
+                @include large-prg-fs();
+                text-transform: uppercase;
+                color: #fff;
+                @include max-width() {
+                    font-size: 17px;
+                }
+            }
+
+            .stages-faq__item-svg {
+                position: absolute;
+                cursor: pointer;
+                aspect-ratio: 1/1;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background-color: $blue-color;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    width: resize(20px);
+                    height: resize(22px);
+                    @include max-width() {
+                        width: 20px;
+                        height: 22px;
+                    }
+                    #Vertical-Line {
+                        transition: transform 0.5s ease;
+                    }
+                }
+
+                svg.openSvg {
+                    #Vertical-Line {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+
+        &-content {
+            @include faq-fs();
+            padding-inline: resize(58px) resize(74px);
+            padding-block: resize(20px) resize(50px);
+            display: none;
+            color: $prg-color;
+            @include max-width() {
+                padding-inline: 40px 25px;
+                padding-block: 10px 25px;
             }
         }
     }

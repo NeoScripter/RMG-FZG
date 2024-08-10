@@ -533,7 +533,7 @@
 
 @mixin stages-main($item-width, $title-width, $description-width, $color) {
     width: resize($item-width);
-    height: resize(244px);
+    min-height: resize(254px);
     background: radial-gradient(circle, $color 0%, rgba(31, 41, 55, 0.40) 60%);
     backdrop-filter: blur(10px);
     padding: resize(20px) resize(28px);
@@ -542,6 +542,7 @@
     @include max-width() {
         width: 100%;
         height: auto;
+        padding: 20px;
     }
 
     .stages-main__item-header {
@@ -549,6 +550,9 @@
         align-items: center;
         gap: resize(13px);
         margin-bottom: resize(16px);
+        @include max-width() {
+            gap: 20px;
+        }
     }
 
     .stages-main__item-digit {
@@ -560,14 +564,18 @@
     .stages-main__item-title {
         @include large-prg();
         width: resize($title-width);
+        @include max-width() {
+            width: 100%;
+        }
     }
     .stages-main__item-description {
+        @include footer-fs();
         color: $prg-color;
         width: resize($description-width);
+        @include max-width() {
+            width: 100%;
+        }
     }
-}
-
-@mixin accordion-item {
 }
 
 @mixin header-li() {
@@ -648,14 +656,27 @@
 }
 
 @mixin large-prg {
+    @include large-prg-fs();
     color: #fff;
     font-family: "Medium";
     font-style: normal;
     font-weight: 700;
+}
+
+@mixin large-prg-fs {
     line-height: resize(24px);
     font-size: resize(24px);
     @include max-width() {
-        line-height: 18px;
+        line-height: 26px;
+        font-size: 20px;
+    }
+}
+
+@mixin faq-fs {
+    line-height: resize(36px);
+    font-size: resize(20px);
+    @include max-width() {
+        line-height: 22px;
         font-size: 18px;
     }
 }
