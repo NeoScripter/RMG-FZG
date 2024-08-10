@@ -318,6 +318,19 @@ section {
         }
     }
 
+    &__description {
+        width: resize(896px);
+        color: #fff;
+        margin-inline: auto;
+        margin-bottom: resize(35px);
+        font-size: resize(17px);
+        @include max-width() {
+            font-size: 14px;
+            width: 80%;
+            margin-bottom: 30px;
+        }
+    }
+
     &__link {
         background-color: $golden-color;
         color: $black-color;

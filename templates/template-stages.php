@@ -66,8 +66,8 @@
             <div class="stages-faq__items">
                 <?php while ($faqs->fetch()): ?>
                     <?php
-                    $questions = $faqs->field('question');
-                    $answers = $faqs->field('answer');
+                    $questions = $faqs->field('faq_question');
+                    $answers = $faqs->field('faq_answer');
                     ?>
                     <?php for ($i = 0; $i < count($questions); $i++): ?>
                     <div class="stages-faq__item">

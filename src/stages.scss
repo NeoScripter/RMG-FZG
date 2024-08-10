@@ -207,3 +207,97 @@
         }
     }
 }
+
+.webform {
+    margin-top: resize(130px);
+    border-radius: resize(20px);
+    display: flex;
+    overflow: hidden;
+    @include max-width() {
+        margin-top: 50px;
+        flex-direction: column;
+        border-radius: 20px;
+    }
+
+    &-info {
+        background: linear-gradient(180deg, #0DA46E, #4A52EC 30.65%, black);
+        flex-basis: 50%;
+        padding-inline: resize(40px);
+        @include max-width() {
+            padding-inline: 20px;
+        }
+
+        &__heading {
+            color: #fff;
+            font-size: resize(28px);
+            font-style: normal;
+            font-weight: 600;
+            font-family: "Medium";
+            margin-block: resize(67px) resize(14px);
+            @include max-width() {
+                font-size: 24px;
+                margin-block: 20px 20px;
+            }
+        }
+
+        &__description {
+            color: $prg-color;
+            margin-bottom: resize(163px);
+            font-size: resize(18px);
+            @include max-width() {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+        }
+
+        &__img {
+            flex-shrink: 0;
+            width: resize(24px);
+            height: resize(24px);
+
+            @include max-width() {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        &__contact-data {
+            display: flex;
+            gap: resize(25px);
+
+            @include max-width() {
+                gap: 20px;
+            }
+
+            p {
+                width: resize(251px);
+                color: #fff;
+                @include footer-fs();
+            }
+        }
+
+        &__message {
+            margin-bottom: resize(42px);
+            @include max-width() {
+                margin-bottom: 15px;
+            }
+
+            a {
+                text-decoration: underline;
+            }
+        }
+
+        &__address {
+            margin-bottom: resize(225px);
+            @include max-width() {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    &-data {
+        flex-basis: 50%;
+        padding: resize(56px) resize(36px);
+        @include blurred-bg();
+    }
+}

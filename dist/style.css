@@ -576,6 +576,17 @@ section {
     @media screen and (max-width: 600px) {
       .call-to-action__heading {
         margin-bottom: 32px; } }
+  .call-to-action__description {
+    width: clamp(373.34px, 62.23vw, 1244.45px);
+    color: #fff;
+    margin-inline: auto;
+    margin-bottom: clamp(14.59px, 2.44vw, 48.62px);
+    font-size: clamp(7.09px, 1.19vw, 23.62px); }
+    @media screen and (max-width: 600px) {
+      .call-to-action__description {
+        font-size: 14px;
+        width: 80%;
+        margin-bottom: 30px; } }
   .call-to-action__link {
     background-color: #facc15;
     color: #000000;
@@ -655,7 +666,7 @@ section {
       font-size: clamp(6.67px, 1.12vw, 22.23px);
       color: #fff;
       transition: opacity 0.3s ease;
-      font-family: 'Regular'; }
+      font-family: "Regular"; }
       @media screen and (max-width: 600px) {
         .footer-nav ul li {
           font-size: 16px; } }
@@ -2085,8 +2096,8 @@ section {
         font-size: clamp(6.67px, 1.12vw, 22.23px);
         color: #fff;
         transition: opacity 0.3s ease;
-        font-family: 'Regular';
-        color: #D1D5DB; }
+        font-family: "Regular";
+        color: #d1d5db; }
         @media screen and (max-width: 600px) {
           .legal-main__item:nth-of-type(1) .legal-main__item-list .legal-main__item-list__li p {
             font-size: 16px; } }
@@ -2182,8 +2193,8 @@ section {
         font-size: clamp(6.67px, 1.12vw, 22.23px);
         color: #fff;
         transition: opacity 0.3s ease;
-        font-family: 'Regular';
-        color: #D1D5DB; }
+        font-family: "Regular";
+        color: #d1d5db; }
         @media screen and (max-width: 600px) {
           .legal-main__item:nth-of-type(2) .legal-main__item-list .legal-main__item-list__li p {
             font-size: 16px; } }
@@ -2279,8 +2290,8 @@ section {
         font-size: clamp(6.67px, 1.12vw, 22.23px);
         color: #fff;
         transition: opacity 0.3s ease;
-        font-family: 'Regular';
-        color: #D1D5DB; }
+        font-family: "Regular";
+        color: #d1d5db; }
         @media screen and (max-width: 600px) {
           .legal-main__item:nth-of-type(3) .legal-main__item-list .legal-main__item-list__li p {
             font-size: 16px; } }
@@ -2504,7 +2515,7 @@ section {
       .stages-main__items .stages-main__item:nth-of-type(1) .stages-main__item-digit {
         font-size: clamp(21.67px, 3.62vw, 72.23px);
         text-transform: uppercase;
-        font-family: 'Bold'; }
+        font-family: "Bold"; }
         @media screen and (max-width: 600px) {
           .stages-main__items .stages-main__item:nth-of-type(1) .stages-main__item-digit {
             font-size: 30px; } }
@@ -2561,7 +2572,7 @@ section {
       .stages-main__items .stages-main__item:nth-of-type(2) .stages-main__item-digit {
         font-size: clamp(21.67px, 3.62vw, 72.23px);
         text-transform: uppercase;
-        font-family: 'Bold'; }
+        font-family: "Bold"; }
         @media screen and (max-width: 600px) {
           .stages-main__items .stages-main__item:nth-of-type(2) .stages-main__item-digit {
             font-size: 30px; } }
@@ -2618,7 +2629,7 @@ section {
       .stages-main__items .stages-main__item:nth-of-type(3) .stages-main__item-digit {
         font-size: clamp(21.67px, 3.62vw, 72.23px);
         text-transform: uppercase;
-        font-family: 'Bold'; }
+        font-family: "Bold"; }
         @media screen and (max-width: 600px) {
           .stages-main__items .stages-main__item:nth-of-type(3) .stages-main__item-digit {
             font-size: 30px; } }
@@ -2675,7 +2686,7 @@ section {
       .stages-main__items .stages-main__item:nth-of-type(4) .stages-main__item-digit {
         font-size: clamp(21.67px, 3.62vw, 72.23px);
         text-transform: uppercase;
-        font-family: 'Bold'; }
+        font-family: "Bold"; }
         @media screen and (max-width: 600px) {
           .stages-main__items .stages-main__item:nth-of-type(4) .stages-main__item-digit {
             font-size: 30px; } }
@@ -2732,7 +2743,7 @@ section {
       .stages-main__items .stages-main__item:nth-of-type(5) .stages-main__item-digit {
         font-size: clamp(21.67px, 3.62vw, 72.23px);
         text-transform: uppercase;
-        font-family: 'Bold'; }
+        font-family: "Bold"; }
         @media screen and (max-width: 600px) {
           .stages-main__items .stages-main__item:nth-of-type(5) .stages-main__item-digit {
             font-size: 30px; } }
@@ -2887,6 +2898,81 @@ section {
         .stages-faq__item-content {
           padding-inline: 40px 25px;
           padding-block: 10px 25px; } }
+
+.webform {
+  margin-top: clamp(54.17px, 9.03vw, 180.56px);
+  border-radius: clamp(8.34px, 1.39vw, 27.78px);
+  display: flex;
+  overflow: hidden; }
+  @media screen and (max-width: 600px) {
+    .webform {
+      margin-top: 50px;
+      flex-direction: column;
+      border-radius: 20px; } }
+  .webform-info {
+    background: linear-gradient(180deg, #0DA46E, #4A52EC 30.65%, black);
+    flex-basis: 50%;
+    padding-inline: clamp(16.67px, 2.78vw, 55.56px); }
+    @media screen and (max-width: 600px) {
+      .webform-info {
+        padding-inline: 20px; } }
+    .webform-info__heading {
+      color: #fff;
+      font-size: clamp(11.67px, 1.95vw, 38.89px);
+      font-style: normal;
+      font-weight: 600;
+      font-family: "Medium";
+      margin-block: clamp(27.92px, 4.66vw, 93.06px) clamp(5.84px, 0.98vw, 19.45px); }
+      @media screen and (max-width: 600px) {
+        .webform-info__heading {
+          font-size: 24px;
+          margin-block: 20px 20px; } }
+    .webform-info__description {
+      color: #D1D5DB;
+      margin-bottom: clamp(67.92px, 11.32vw, 226.39px);
+      font-size: clamp(7.5px, 1.25vw, 25px); }
+      @media screen and (max-width: 600px) {
+        .webform-info__description {
+          font-size: 14px;
+          margin-bottom: 20px; } }
+    .webform-info__img {
+      flex-shrink: 0;
+      width: clamp(10px, 1.67vw, 33.34px);
+      height: clamp(10px, 1.67vw, 33.34px); }
+      @media screen and (max-width: 600px) {
+        .webform-info__img {
+          width: 24px;
+          height: 24px; } }
+    .webform-info__contact-data {
+      display: flex;
+      gap: clamp(10.42px, 1.74vw, 34.73px); }
+      @media screen and (max-width: 600px) {
+        .webform-info__contact-data {
+          gap: 20px; } }
+      .webform-info__contact-data p {
+        width: clamp(104.59px, 17.44vw, 348.62px);
+        color: #fff;
+        font-size: clamp(6.67px, 1.12vw, 22.23px); }
+        @media screen and (max-width: 600px) {
+          .webform-info__contact-data p {
+            font-size: 16px; } }
+    .webform-info__message {
+      margin-bottom: clamp(17.5px, 2.92vw, 58.34px); }
+      @media screen and (max-width: 600px) {
+        .webform-info__message {
+          margin-bottom: 15px; } }
+      .webform-info__message a {
+        text-decoration: underline; }
+    .webform-info__address {
+      margin-bottom: clamp(93.75px, 15.63vw, 312.5px); }
+      @media screen and (max-width: 600px) {
+        .webform-info__address {
+          margin-bottom: 15px; } }
+  .webform-data {
+    flex-basis: 50%;
+    padding: clamp(23.34px, 3.89vw, 77.78px) clamp(15px, 2.5vw, 50px);
+    background: rgba(31, 41, 55, 0.4);
+    backdrop-filter: blur(10px); }
 
 
 /*# sourceMappingURL=style.css.map*/
