@@ -59,7 +59,7 @@
         $pods = pods('page');
 
         $faqs = $pods->find(array(
-            'limit' => -1 
+            'limit' => -1
         ));
 
         if ($faqs->total() > 0) : ?>
@@ -68,24 +68,32 @@
                     <?php
                     $questions = $faqs->field('faq_question');
                     $answers = $faqs->field('faq_answer');
+
+                    if (is_array($questions) && is_array($answers) && count($questions) > 0 && count($answers) > 0):
+                        for ($i = 0; $i < count($questions); $i++):
+                            if (!empty($questions[$i]) && !empty($answers[$i])):
                     ?>
-                    <?php for ($i = 0; $i < count($questions); $i++): ?>
-                    <div class="stages-faq__item">
-                        <div class="stages-faq__item-title">
-                            <div class="digit"><?php echo $i < 9 ? "0" . $i + 1 : $i + 1 ;?></div>
-                            <h4><?php echo $questions[$i]; ?></h4>
-                            <div class="stages-faq__item-svg toggle-faq">
-                                <?php include get_template_directory() . "/assets/svgs/accordion-close.svg"; ?>
-                            </div>
-                        </div>
-                        <div class="stages-faq__item-content">
-                            <?php echo $answers[$i]; ?>
-                        </div>
-                    </div>
-                    <?php endfor; ?>
+                                <div class="stages-faq__item">
+                                    <div class="stages-faq__item-title">
+                                        <div class="digit"><?php echo $i < 9 ? "0" . ($i + 1) : $i + 1; ?></div>
+                                        <h4><?php echo esc_html($questions[$i]); ?></h4>
+                                        <div class="stages-faq__item-svg toggle-faq">
+                                            <?php include get_template_directory() . "/assets/svgs/accordion-close.svg"; ?>
+                                        </div>
+                                    </div>
+                                    <div class="stages-faq__item-content">
+                                        <?php echo wp_kses_post($answers[$i]); ?>
+                                    </div>
+                                </div>
+                    <?php
+                            endif;
+                        endfor;
+                    endif;
+                    ?>
                 <?php endwhile; ?>
+
             </div>
         <?php endif; ?>
-</section>
+    </section>
 </div>
 <?php get_footer(); ?>

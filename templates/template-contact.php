@@ -3,6 +3,10 @@
 /**
  * Template Name: Contact Us
  */
+
+ $pods = pods('page', get_the_ID());
+ $email = $pods->field('email');
+ $address = $pods->field('address');
 ?>
 
 <?php get_header(); ?>
@@ -13,17 +17,20 @@
             <p class="webform-info__description">Say something to start a live chat!</p>
             <div class="webform-info__message webform-info__contact-data">
                 <img src="<?php echo get_template_directory_uri() . "/assets/svgs/email.svg"; ?>" alt="email" class="webform-info__img">
-                <a href="mailto:welcome@rmgfzc" target="_blank" class="webform-info__message-description">welcome@rmgfzc</a>
+                <a href="mailto:welcome@rmgfzc" target="_blank" class="webform-info__message-description"><?php echo $email ;?></a>
             </div>
             <div class="webform-info__address webform-info__contact-data">
                 <img src="<?php echo get_template_directory_uri() . "/assets/svgs/location.svg"; ?>" alt="location" class="webform-info__img">
-                <p class="webform-info__address-description">9th Floor, Amtel Building
-                    148 Des Voeux Road Central
-                    Central, Hong Kong</p>
+                <p class="webform-info__address-description"><?php echo $address ;?></p>
             </div>
         </div>
         <div class="webform-data">
-
+            <div class="webform-data__title">
+                <img src="<?php echo get_template_directory_uri() . "/assets/svgs/form-logo.svg"; ?>" alt="Logo" class="webform-data__title-img">
+                <h4 class="webform-data__title-heading">We're Here to Help</h4>
+            </div>
+            <p class="webform-data__description">Whether you have questions about our services, need assistance with your account, or want to learn more about investing in gold bullion, our team is here to help. Get in touch with us through the contact information below</p>
+            <?php echo do_shortcode('[contact-form-7 id="dde395e" title="Contact form 1"]'); ?>
         </div>
     </section>
     <section class="call-to-action">
